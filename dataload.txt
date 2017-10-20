@@ -10,7 +10,7 @@ CSV to Hive
 # hadoop fs -ls /tmp
 
 3.Hive create test table
-#hive
+# hive
 
 hive>
 create table test (col1 string,col2 string,col3 string,col4 string,col5 string,col6 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
@@ -19,11 +19,12 @@ create table test (col1 string,col2 string,col3 string,col4 string,col5 string,c
 hive>
 load data inpath '/tmp/googl.csv' into table test;
 
- Select data from Hive
-#select * from test limit1;
+  Select data from Hive
+hive>
+select * from test limit1;
 
- Exit Hive
-#exit;
+hive>
+exit;
 
 
 SQOOP from MySQL to Hive
@@ -45,4 +46,6 @@ SQOOP from MySQL to Hive
 
 hive>
 show tables;
+
+hive>
 exit;
