@@ -1,9 +1,13 @@
+[This procedures are needed for ALL nodes to complete!!!]
+
 R and R-Hadoop Install
 
 1. Install epel
 # yum install epel-release
+
 2. Update yum
 # yum update
+
 3. Install R packages
 # yum install R
 
@@ -13,12 +17,12 @@ RHADOOP.tar include packages need for Install R-Hadoop
 # wget http://140.116.68.8/procedures/RHADOOP.tar
 # tar xvf RHADOOP.tar
 # cd RHadoop
-
 ******
+
 4. Install rmr2
 # cd for_rmr2
-
 # R CMD INSTALL bitops_1.0-6.tar.gz caTools_1.17.1.tar.gz digest_0.6.10.tar.gz functional_0.6.tar.gz magrittr_1.5.tar.gz Rcpp_0.12.6.tar.gz RJSONIO_1.3-0.tar.gz stringi_1.1.1.tar.gz stringr_1.0.0.tar.gz plyr_1.8.4.tar.gz reshape2_1.4.1.tar.gz
+[The procedures of installing packages must be the same as above!!!]
 
 # cd ..
 # R CMD INSTALL rmr2*
@@ -26,30 +30,36 @@ RHADOOP.tar include packages need for Install R-Hadoop
 5. Configure user profile
 # vi /etc/profile
 
+   Add lines below in user profile
+[click "i"]
 export HADOOP_CMD=/usr/bin/hadoop
 export HADOOP_STREAMING=/opt/cloudera/parcels/CDH-5.12.1-1.cdh5.12.1.p0.3/lib/hadoop-mapreduce/hadoop-streaming-2.6.0-cdh5.12.1.jar
+[click "ESC"]
+[click ":wq"]
 
-6.Install plyrmr
+# source /etc/profile
+
+6. Install plyrmr
 # cd for_plyrmr
+
 # cd for_dplyr
-
 # R CMD INSTALL assertthat_0.1.tar.gz BH_1.60.0-2.tar.gz DBI_0.4-1.tar.gz R6_2.1.2.tar.gz lazyeval_0.2.0.tar.gz tibble_1.1.tar.gz
+[The procedures of installing packages must be the same as above!!!]
 
-#cd ../for_Hmisc
+# cd ../for_Hmisc
+# R CMD INSTALL acepack_1.3-3.3.tar.gz chron_2.3-47.tar.gz colorspace_1.2-6.tar.gz data.table_1.9.6.tar.gz dichromat_2.0-0.tar.gz Formula_1.2-1.tar.gz gtable_0.2.0.tar.gz gridExtra_2.2.1.tar.gz labeling_0.3.tar.gz munsell_0.4.3.tar.gz RColorBrewer_1.1-2.tar.gz scales_0.4.0.tar.gz ggplot2_2.1.0.tar.gz latticeExtra_0.6-28.tar.gz
+[The procedures of installing packages must be the same as above!!!]
 
-#R CMD INSTALL acepack_1.3-3.3.tar.gz chron_2.3-47.tar.gz colorspace_1.2-6.tar.gz data.table_1.9.6.tar.gz dichromat_2.0-0.tar.gz Formula_1.2-1.tar.gz gtable_0.2.0.tar.gz gridExtra_2.2.1.tar.gz labeling_0.3.tar.gz munsell_0.4.3.tar.gz RColorBrewer_1.1-2.tar.gz scales_0.4.0.tar.gz ggplot2_2.1.0.tar.gz latticeExtra_0.6-28.tar.gz
-
-#cd ..
+# cd ..
 # R CMD INSTALL dplyr_0.5.0.tar.gz Hmisc_3.17-4.tar.gz memoise_1.0.0.tar.gz rjson_0.2.15.tar.gz R.methodsS3_1.7.1.tar.gz
+[The procedures of installing packages must be the same as above!!!]
 
 # cd ..
 # R CMD INSTALL plyrmr*
 
-
 7. Install rhdfs
 # R CMD Install rJava*
 # R CMD Install rhdfs*
-
 
 8.Verify rhdfs
 #R
@@ -59,7 +69,6 @@ R> hdfs.init()
 R> hdfs.ls(“/”)
 
 R>q()
-
 
 9. Verify rmr2
 #su - hdfs R
