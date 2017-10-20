@@ -3,16 +3,17 @@ R and R-Hadoop Install
 1. Install epel
 # yum install epel-release
 2. Update yum
-# yum  update
+# yum update
 3. Install R packages
 # yum install R
 
-
 ******
 RHADOOP.tar include packages need for Install R-Hadoop
-cd /tmp
-tar xvf RHADOOP.tar
-cd RHadoop
+# cd /tmp
+# wget http://140.116.68.8/procedures/RHADOOP.tar
+# tar xvf RHADOOP.tar
+# cd RHadoop
+
 ******
 4. Install rmr2
 # cd for_rmr2
