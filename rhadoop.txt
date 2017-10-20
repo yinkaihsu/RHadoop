@@ -1,7 +1,7 @@
-[This procedures are needed for ALL nodes to complete!!!]
 
 R and R-Hadoop Install
 
+[The procedures below are 
 1. Install epel
 # yum install epel-release
 
@@ -58,22 +58,22 @@ export HADOOP_STREAMING=/opt/cloudera/parcels/CDH-5.12.1-1.cdh5.12.1.p0.3/lib/ha
 # R CMD INSTALL plyrmr*
 
 7. Install rhdfs
-# R CMD Install rJava*
-# R CMD Install rhdfs*
+# R CMD INSTALL rJava*
+# R CMD INSTALL rhdfs*
 
 8.Verify rhdfs
 #R
 
 R> library(rhdfs)
 R> hdfs.init()
-R> hdfs.ls(“/”)
+R> hdfs.ls("/")
 
 R>q()
 
 9. Verify rmr2
-#su - hdfs R
+# su - hdfs R
 
 R> library(rmr2)
-R>from.dfs(mapreduce(to.dfs(1:100)))
+R> from.dfs(mapreduce(to.dfs(1:100)))
 
-R>q()
+R> q()
