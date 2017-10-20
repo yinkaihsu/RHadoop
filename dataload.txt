@@ -1,0 +1,25 @@
+
+CSV to Hive
+
+1.Put sample data to hdfs
+ # hadoop fs -put googl.csv /tmp
+
+2.Hive create test table
+#hive
+
+hive>
+create table test (col1 string,col2 string,col3 string,col4 string,col5 string,col6 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘,';
+
+3. Load Data int to Hive Table
+hive>
+load data inpath '/tmp/googl.csv' into table test;
+
+
+
+SQOOP from MySQL to Hive
+
+1.Copy mysql connector to /var/lib/sqoop
+# cp mysql-connector-java-5.1.40-bin.jar /var/lib/sqoop
+
+2.sqoop import from mysql to hive
+# sudo -u hdfs sqoop import --connect jdbc:mysql://140.116.69.58/testdb --username std01 --password nckutest --table U2ALL --hive-import
